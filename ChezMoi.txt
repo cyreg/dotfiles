@@ -1,0 +1,47 @@
+
+>chezmoi alias cm 
+>cm add .MonFichier
+> ls
+ dot_config   dot_zshrc
+> git push
+Enter passphrase for key '/home/nabu/.ssh/id_ed25519': 
+Everything up-to-date
+> git add .
+
+> git commit -m "Next"
+[main 6da52ca] Next
+ 6 files changed, 444 insertions(+)
+ create mode 100644 dot_config/nvim/init.lua
+ create mode 100644 dot_config/nvim/spell/fr.utf-8.add
+ create mode 100644 dot_config/nvim/spell/fr.utf-8.add.spl
+ create mode 100644 dot_config/nvim/spell/fr.utf-8.spl
+ create mode 100644 dot_config/nvim/spell/fr.utf-8.sug
+ create mode 100644 dot_config/private_qutebrowser/config.py
+> git push
+Enter passphrase for key '/home/nabu/.ssh/id_ed25519': 
+Énumération des objets: 13, fait.
+Décompte des objets: 100% (13/13), fait.
+Compression par delta en utilisant jusqu'à 16 fils d'exécution
+Compression des objets: 100% (11/11), fait.
+Écriture des objets: 100% (12/12), 1.57 Mio | 2.37 Mio/s, fait.
+Total 12 (delta 0), réutilisés 0 (delta 0), réutilisés du paquet 0 (depuis 0)
+To github.com:cyreg/dotfiles.git
+   3657afb..6da52ca  main -> main
+
+ ~/.local/share/chezmoi | main ............................................................................................................................................................................................................................................................................................................................................... 8s | 10:40:57 
+> 
+
+Sur une autre machine : 
+
+>chezmoi init https://github.com/cyregg/dotfiles.git #Si auth github https://
+>chezmoi init git@github.com:$GITHUB_USERNAME/dotfiles.git  #Si auth github SSH 
+
+>cm diff  #Check changes
+>cm apply -v #Apply changes 
+>cm merge #Lancer un vimdiff
+>cm update -v #Pull and apply changes
+
+#Setup a new machine, single line : 
+chezmoi init --apply git@github.com:cyregg/dotfiles.git
+
+
